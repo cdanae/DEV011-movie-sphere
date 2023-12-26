@@ -4,7 +4,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: pla;
+    font-family: 'Playfair Display', serif;
     width: 100%;
     height: 50px;
 }
