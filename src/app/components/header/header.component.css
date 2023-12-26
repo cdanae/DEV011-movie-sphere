@@ -1,0 +1,19 @@
+header {
+    background-color: #FFC0CB;
+    color: #02376E;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: pla;
+    width: 100%;
+    height: 85px;
+}
+.logo {
+    font-size: 2rem;
+    margin: 0;
+    margin-left: 46px;
+}
+.filter-container {
+    border: 2px red solid;
+    margin-right: 46px;
+}
