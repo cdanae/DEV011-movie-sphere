@@ -8,6 +8,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  margin: 70px 0 0 45px;
 }
 
 .card-image {
