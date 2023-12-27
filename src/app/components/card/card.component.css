@@ -1,0 +1,32 @@
+.card-container {
+  font-family: 'Playfair Display', serif;
+  background-color: #02376E;
+  width: 230px;
+  height: 330px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 70px 0 0 45px;
+}
+
+.card-image {
+  border-radius: 10px;
+  width: 95%;
+  height: 70%;
+}
+
+.card-title {
+  color: #F0EFE9;
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.card-subtitle {
+  color: #FFC0CB;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+}
