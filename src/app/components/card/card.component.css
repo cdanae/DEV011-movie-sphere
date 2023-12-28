@@ -1,32 +1,33 @@
-.card-container {
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
   font-family: 'Playfair Display', serif;
+  margin: 40px 45px 40px 45px;
+}
+
+.card-container {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
   background-color: #02376E;
-  width: 230px;
-  height: 330px;
   border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  margin: 70px 0 0 45px;
+  height: 450px;
 }
 
 .card-image {
-  border-radius: 10px;
-  width: 95%;
+  width: 100%;
   height: 70%;
+  border-radius: 10px;
 }
 
 .card-title {
+  margin: 10px 0;
+  font-size: 1.125rem;
   color: #F0EFE9;
-  font-size: 20px;
-  font-weight: 400;
-  margin: 0;
 }
 
 .card-subtitle {
+  font-size: 0.875rem;
   color: #FFC0CB;
-  font-size: 16px;
-  font-weight: 400;
-  margin: 0;
 }
