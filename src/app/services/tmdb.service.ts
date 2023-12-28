@@ -12,8 +12,8 @@ export class TmdbService {
 
   constructor(private http: HttpClient) { }
 
-  getPopularMovies(): Observable<any> {
-    const url = `${this.baseUrl}/movie/popular?api_key=${this.apiKey}`;
+  getDiscoverMovies(): Observable<any> {
+    const url = `${this.baseUrl}/discover/movie?api_key=${this.apiKey}`;
     return this.http.get<any>(url);
   }
 }

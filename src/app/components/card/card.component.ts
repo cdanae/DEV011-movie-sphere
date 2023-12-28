@@ -12,7 +12,7 @@ export class CardComponent implements OnInit {
   constructor(private tmdbService: TmdbService) { }
 
   ngOnInit(): void {
-    this.tmdbService.getPopularMovies().subscribe(data => {
+    this.tmdbService.getDiscoverMovies().subscribe(data => {
       this.movies = data.results;
     })
   }
