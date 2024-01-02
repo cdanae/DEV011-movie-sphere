@@ -11,7 +11,6 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './components/footer/footer.component';
-import { PaginatorComponent } from './components/paginator/paginator.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +20,6 @@ import { PaginatorComponent } from './components/paginator/paginator.component';
     NotFoundComponent,
     HeaderComponent,
     FooterComponent,
-    PaginatorComponent
   ],
   imports: [
     BrowserModule,
