@@ -32,3 +32,13 @@
   font-size: 0.875rem;
   color: #FFC0CB;
 }
+
+.paginator::ng-deep .ngx-pagination{
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+}
+.paginator::ng-deep .ngx-pagination .current {
+  background: #FFC0CB;
+  color: #02376E;
+
+}

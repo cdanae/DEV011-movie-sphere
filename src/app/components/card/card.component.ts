@@ -8,6 +8,7 @@ import { TmdbService } from 'src/app/services/tmdb.service';
 })
 export class CardComponent implements OnInit {
   movies: any[] = [];
+  public page!: number
 
   constructor(private tmdbService: TmdbService) { }
 

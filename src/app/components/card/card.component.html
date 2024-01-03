@@ -1,5 +1,5 @@
 <div class="grid-container">
-  <ng-container *ngFor="let movie of movies">
+  <ng-container *ngFor="let movie of movies | paginate: { itemsPerPage: 8, currentPage: page }">
     <div class="card-container">
       <img [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" alt="" class="card-image">
       <h2 class="card-title">{{ movie.title }}</h2>
@@ -7,3 +7,5 @@
     </div>
   </ng-container>
 </div>
+
+<pagination-controls class="paginator" (pageChange)="page = $event" previousLabel="Previous" nextLabel="Next"></pagination-controls>
