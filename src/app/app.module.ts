@@ -12,6 +12,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './components/footer/footer.component';
+import { CardsContainerComponent } from './components/cards-container/cards-container.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { FooterComponent } from './components/footer/footer.component';
     NotFoundComponent,
     HeaderComponent,
     FooterComponent,
+    CardsContainerComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,21 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { TmdbService } from 'src/app/services/tmdb.service';
-
+import { Component, Input, OnInit } from '@angular/core';
+export interface Movie {
+  title: string;
+  release_date: string;
+  poster_path: string;
+}
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css']
 })
-export class CardComponent implements OnInit {
-  movies: any[] = [];
-  public page!: number
 
-  constructor(private tmdbService: TmdbService) { }
+export class CardComponent implements OnInit {
+  @Input() movie!: Movie;
+  constructor() { }
 
   ngOnInit(): void {
-    this.tmdbService.getDiscoverMovies().subscribe(data => {
-      this.movies = data.results;
-    })
   }
-
 }
