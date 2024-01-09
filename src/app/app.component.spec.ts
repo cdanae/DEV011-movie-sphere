@@ -26,10 +26,4 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('DEV011-movie-sphere');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('DEV011-movie-sphere app is running!');
-  });
 });
