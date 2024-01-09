@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TmdbService } from 'src/app/services/tmdb.service';
+import { TmdbService } from '../../services/tmdb.service';
 
 @Component({
   selector: 'app-cards-container',
@@ -17,5 +17,4 @@ export class CardsContainerComponent implements OnInit {
       this.movies = data.results;     
     })
   }
-
 }
