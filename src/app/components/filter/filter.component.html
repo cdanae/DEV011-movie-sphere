@@ -1,4 +1,4 @@
-<div>
+<div class="filter-container">
   <select name="filterBy">
     <option disabled selected>Filter by</option>
     <option *ngFor="let genre of genres" [value]="genre.id">{{ genre.name}}</option>
