@@ -5,14 +5,14 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class TmdbService {
+export class GenresService {
   private apiKey = '25a2456bb2af85399403dbfef6b76c6e';
-  private baseUrl = 'https://api.themoviedb.org/3';
+  private baseUrl = 'https://api.themoviedb.org/3'
 
   constructor(private http: HttpClient) { }
 
-  getDiscoverMovies(): Observable<any> {
-    const url = `${this.baseUrl}/discover/movie?api_key=${this.apiKey}`;
+  getGenreMovies(): Observable<any> {
+    const url = `${this.baseUrl}/genre/movie/list?api_key=${this.apiKey}`;
     return this.http.get<any>(url);
   }
 }

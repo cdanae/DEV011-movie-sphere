@@ -13,6 +13,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './components/footer/footer.component';
 import { CardsContainerComponent } from './components/cards-container/cards-container.component';
+import { FilterComponent } from './components/filter/filter.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { CardsContainerComponent } from './components/cards-container/cards-cont
     HeaderComponent,
     FooterComponent,
     CardsContainerComponent,
+    FilterComponent,
   ],
   imports: [
     BrowserModule,
