@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TmdbService } from '../../services/tmdb.service';
+import movies from './response';
 
 @Component({
   selector: 'app-cards-container',
@@ -14,7 +15,8 @@ export class CardsContainerComponent implements OnInit {
 
   ngOnInit(): void {
     this.tmdbService.getDiscoverMovies().subscribe(data => {
-      this.movies = data.results;     
+      //this.movies = data.results;
+      this.movies = data.results
     })
   }
 }

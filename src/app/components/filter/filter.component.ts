@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { GenresService } from '../../services/genres.service';
+import genres from './genres';
 
 @Component({
   selector: 'app-filter',
@@ -14,7 +15,8 @@ export class FilterComponent implements OnInit {
   ngOnInit(): void {
     this.genresService.getGenreMovies().subscribe(
       (data: any) => {
-        this.genres = data.genres  
+        //this.genres = data.genres  
+        this.genres = data.genres
       }
     )
   }
