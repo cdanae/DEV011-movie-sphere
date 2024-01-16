@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  filteredMovies: any[] = [];
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  receiveFilteredResults(filteredResults: string): void {
+    console.log('String filtrado:', filteredResults);
+    const filteredArray: any[] = [filteredResults];
+    this.filteredMovies = filteredArray;
   }
 
 }

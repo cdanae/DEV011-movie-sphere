@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { GenresService } from '../../services/genres.service';
-import genres from './genres';
+//import genres from './genres';
 
 @Component({
   selector: 'app-filter',
@@ -9,16 +9,46 @@ import genres from './genres';
 })
 export class FilterComponent implements OnInit {
   genres: any[] = [];
+  selectedOptionGenre: string = '';
+  filterMovies: any[] = [];  
+
+
+  @Output() filterResults = new EventEmitter<string>();
 
   constructor(private genresService: GenresService) { }
 
   ngOnInit(): void {
     this.genresService.getGenreMovies().subscribe(
       (data: any) => {
-        //this.genres = data.genres  
         this.genres = data.genres
+      },
+      (error) => {
+        console.error('Error al obtener generos: ', error);
+
       }
     )
+  }
+
+  applyFilter(): void {
+    console.log('Género seleccionado:', this.selectedOptionGenre);
+    const url = `${this.genresService.baseUrl}/discover/movie?with_genres=${this.selectedOptionGenre}&api_key=${this.genresService.apiKey}`;
+    console.log('URL de filtrado:', url);
+
+    if (this.selectedOptionGenre) {
+      this.genresService.getFilterByGenre(this.selectedOptionGenre).subscribe(
+        (filterMovies: any) => {
+          this.filterMovies = filterMovies.results;
+          console.log('Resultados de filtrado:', filterMovies);
+
+        },
+        (error) => {
+          console.error('Error al filtrar películas:', error);
+        }
+      );
+    } else {
+      this.filterMovies = [];
+    }
+
   }
 
 }
