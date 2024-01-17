@@ -4,6 +4,7 @@ export interface Movie {
   release_date: string;
   poster_path: string;
 }
+// interfaces debe estar en otro archivo
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
