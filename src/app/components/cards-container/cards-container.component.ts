@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TmdbService } from '../../services/tmdb.service';
+import { Movie } from 'src/app/interfaces/movies';
 
 @Component({
   selector: 'app-cards-container',
@@ -7,9 +8,7 @@ import { TmdbService } from '../../services/tmdb.service';
   styleUrls: ['./cards-container.component.css']
 })
 export class CardsContainerComponent implements OnInit {
-  movies: any[] = [];
-  //  movies: Movie[] = []; checar si debo cambiarlo
-  //Quitar any, tipear correctamente
+  movies: Movie[] = [];
   public page!: number;
 
   constructor(private tmdbService: TmdbService) { }

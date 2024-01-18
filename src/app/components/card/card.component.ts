@@ -1,10 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-export interface Movie {
-  title: string;
-  release_date: string;
-  poster_path: string;
-}
-// interfaces debe estar en otro archivo
+import { Movie } from 'src/app/interfaces/movies';
+
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',

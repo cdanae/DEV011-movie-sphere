@@ -1,6 +1,6 @@
 <div class="filter-container">
     <select name="filterBy">
         <option value="">Filter by</option>
-        <option value="">Genero</option>
+        <option *ngFor="let genre of genres" [value]="genre.id">{{ genre.name }}</option>
     </select>
 </div>
