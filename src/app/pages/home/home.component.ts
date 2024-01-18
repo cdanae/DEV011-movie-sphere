@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Movie } from 'src/app/interfaces/movies';
+import { TmdbService } from 'src/app/services/tmdb.service';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +8,38 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  movies: Movie[] = [];
+  //@Input() filteredMovies: any[] = [];
+  filteredMovies: Movie[] = [];
 
-  constructor() { }
+  constructor(private tmdbService: TmdbService) { }
 
   ngOnInit(): void {
+    this.tmdbService.getDiscoverMovies().subscribe(data => {
+      this.movies = data.results;
+
+      this.filteredMovies = this.movies
+    })
+  }
+
+  applyFilter(selectedFilter: string): void {
+    if (selectedFilter) {
+      this.tmdbService.getFilterByGenre(selectedFilter).subscribe(
+        (filterMovies: any) => {
+          this.filteredMovies = filterMovies.results;
+          console.log('Resultados de filtrado:', filterMovies);
+          
+        },
+        (error) => {
+          console.error('Error al filtrar películas:', error);
+          
+        }
+      );
+    } else {
+      this.filteredMovies = [];
+      //this.filteredMovies = this.movies;
+
+    }
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { TmdbService } from '../../services/tmdb.service';
 import { Movie } from 'src/app/interfaces/movies';
 
@@ -9,6 +9,7 @@ import { Movie } from 'src/app/interfaces/movies';
 })
 export class CardsContainerComponent implements OnInit {
   movies: Movie[] = [];
+  @Input() filteredMovies: Movie[] = [];
   public page!: number;
 
   constructor(private tmdbService: TmdbService) { }
