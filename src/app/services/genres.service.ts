@@ -16,7 +16,5 @@ export class GenresService {
     return this.http.get<any>(url);
   }
 
-  getFilterByGenre(genreId: string): Observable<any> {
-    return this.http.get(`${this.baseUrl}/discover/movie?api_key=${this.apiKey}&with_genres=${genreId}`)
-  }
+  
 }

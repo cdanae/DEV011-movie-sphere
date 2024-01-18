@@ -14,6 +14,7 @@ export class FilterComponent implements OnInit {
 
 
   @Output() filterResults = new EventEmitter<string>();
+  @Output() selectedFilter = new EventEmitter<string>();
 
   constructor(private genresService: GenresService) { }
 
@@ -31,7 +32,8 @@ export class FilterComponent implements OnInit {
 
   applyFilter(): void {
     console.log('Género seleccionado:', this.selectedOptionGenre);
-    const url = `${this.genresService.baseUrl}/discover/movie?with_genres=${this.selectedOptionGenre}&api_key=${this.genresService.apiKey}`;
+    this.selectedFilter.emit(this.selectedOptionGenre)
+    /* const url = `${this.genresService.baseUrl}/discover/movie?with_genres=${this.selectedOptionGenre}&api_key=${this.genresService.apiKey}`;
     console.log('URL de filtrado:', url);
 
     if (this.selectedOptionGenre) {
@@ -48,7 +50,7 @@ export class FilterComponent implements OnInit {
     } else {
       this.filterMovies = [];
     }
-
+ */
   }
 
 }
