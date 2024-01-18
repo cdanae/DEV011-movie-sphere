@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Genre } from 'src/app/interfaces/genre';
 import { GenreService } from 'src/app/services/genre.service';
 
@@ -8,7 +8,12 @@ import { GenreService } from 'src/app/services/genre.service';
   styleUrls: ['./filter.component.css']
 })
 export class FilterComponent implements OnInit {
-genres: Genre[] = [];
+  genres: Genre[] = [];
+  selectedOptionGenre: string = '';
+  filterMovies: any[] = [];
+
+ // @Output() filterResults = new EventEmitter<string>();
+  @Output() selectedFilter = new EventEmitter<string>();
 
   constructor(private genresService: GenreService) { }
 
@@ -19,9 +24,15 @@ genres: Genre[] = [];
       },
       (error) => {
         console.error('Error al obtener generos: ', error);
-        
+
       }
     )
+  }
+
+  applyFilter(): void {
+    console.log('Género seleccionado:', this.selectedOptionGenre);
+
+    this.selectedFilter.emit(this.selectedOptionGenre)
   }
 
 }
