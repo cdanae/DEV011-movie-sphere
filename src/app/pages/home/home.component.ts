@@ -9,8 +9,7 @@ import { TmdbService } from 'src/app/services/tmdb.service';
 })
 export class HomeComponent implements OnInit {
   movies: Movie[] = [];
-  //@Input() filteredMovies: any[] = [];
-  filteredMovies: Movie[] = [];
+  @Input() filteredMovies: Movie[] = [];
 
   constructor(private tmdbService: TmdbService) { }
 
@@ -37,8 +36,6 @@ export class HomeComponent implements OnInit {
       );
     } else {
       this.filteredMovies = [];
-      //this.filteredMovies = this.movies;
-
     }
   }
 

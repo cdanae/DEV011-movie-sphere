@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Genre } from 'src/app/interfaces/genre';
+import { Movie } from 'src/app/interfaces/movies';
 import { GenreService } from 'src/app/services/genre.service';
 
 @Component({
@@ -10,9 +11,8 @@ import { GenreService } from 'src/app/services/genre.service';
 export class FilterComponent implements OnInit {
   genres: Genre[] = [];
   selectedOptionGenre: string = '';
-  filterMovies: any[] = [];
+  filterMovies: Genre[] = [];
 
- // @Output() filterResults = new EventEmitter<string>();
   @Output() selectedFilter = new EventEmitter<string>();
 
   constructor(private genresService: GenreService) { }
