@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { MovieResponse } from '../interfaces/movies';
+import { GenreResponse } from '../interfaces/genre';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +13,13 @@ export class TmdbService {
 
   constructor(private http: HttpClient) { }
 
-  getDiscoverMovies(): Observable<any> {
+  getDiscoverMovies(): Observable<MovieResponse> {
     const url = `${this.baseUrl}/discover/movie?api_key=${this.apiKey}`;
-    return this.http.get<any>(url);
+    return this.http.get<MovieResponse>(url);
+  }
+
+  getFilterByGenre(genreId: string): Observable<GenreResponse> {
+    const url = `${this.baseUrl}/discover/movie?api_key=${this.apiKey}&with_genres=${genreId}`
+    return this.http.get<GenreResponse>(url)
   }
 }

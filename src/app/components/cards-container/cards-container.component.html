@@ -1,5 +1,5 @@
 <div class="grid-container">
-    <ng-container *ngFor="let movie of movies | paginate: { itemsPerPage: 8, currentPage: page }">
+    <ng-container *ngFor="let movie of filteredMovies | paginate: { itemsPerPage: 8, currentPage: page }">
         <app-card [movie]="movie"></app-card>
     </ng-container>
 </div>

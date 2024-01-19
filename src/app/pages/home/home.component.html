@@ -1,1 +1,4 @@
-<app-cards-container></app-cards-container>
+<section class="filter-section">
+    <app-filter (selectedFilter)="applyFilter($event)"></app-filter>
+</section>
+<app-cards-container [filteredMovies]="filteredMovies"></app-cards-container>
