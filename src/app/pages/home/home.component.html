@@ -2,4 +2,4 @@
     <app-filter (selectedFilter)="applyFilter($event)"></app-filter>
     <app-order (selectedOrder)="applyOrder($event)"></app-order>
 </section>
-<app-cards-container [filteredMovies]="filteredMovies"></app-cards-container>
+<app-cards-container [filteredMovies]="filteredMovies" [orderedMovies]="orderedMovies"></app-cards-container>

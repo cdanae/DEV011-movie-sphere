@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Movie } from 'src/app/interfaces/movies';
 
 @Component({
   selector: 'app-order',
@@ -6,7 +7,8 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./order.component.css']
 })
 export class OrderComponent implements OnInit {
-  selectedOptionOrder: string = ''
+  selectedOptionOrder: string = '';
+  orderMovies: Movie[] = [];
 
     @Output() selectedOrder = new EventEmitter<string>();
 

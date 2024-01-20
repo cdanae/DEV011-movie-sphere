@@ -10,6 +10,7 @@ import { Movie } from 'src/app/interfaces/movies';
 export class CardsContainerComponent implements OnInit {
   movies: Movie[] = [];
   @Input() filteredMovies: Movie[] = [];
+  @Input() orderedMovies: Movie[] = [];
   public page!: number;
 
   constructor(private tmdbService: TmdbService) { }
