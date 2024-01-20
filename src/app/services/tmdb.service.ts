@@ -22,4 +22,9 @@ export class TmdbService {
     const url = `${this.baseUrl}/discover/movie?api_key=${this.apiKey}&with_genres=${genreId}`
     return this.http.get<GenreResponse>(url)
   }
+
+  getOrderBy(orderValue: string): Observable<MovieResponse> {
+    const url = `${this.baseUrl}/discover/movie?api_key=${this.apiKey}&sort_by=${orderValue}`
+    return this.http.get<MovieResponse>(url)
+  }
 }

@@ -10,14 +10,16 @@ import { TmdbService } from 'src/app/services/tmdb.service';
 export class HomeComponent implements OnInit {
   movies: Movie[] = [];
   @Input() filteredMovies: Movie[] = [];
+  @Input() orderedMovies: Movie[] = [];
 
   constructor(private tmdbService: TmdbService) { }
 
   ngOnInit(): void {
     this.tmdbService.getDiscoverMovies().subscribe(data => {
       this.movies = data.results;
+      this.filteredMovies = this.movies;
+      this.orderedMovies = this.movies;
 
-      this.filteredMovies = this.movies
     })
   }
 
@@ -36,6 +38,24 @@ export class HomeComponent implements OnInit {
       );
     } else {
       this.filteredMovies = [];
+    }
+  }
+
+  applyOrder(selectedOrder: string): void {
+    if (selectedOrder) {
+      this.tmdbService.getOrderBy(selectedOrder).subscribe(
+        (orderMovies: any) => {
+          this.orderedMovies = orderMovies.results;
+          console.log('Resultados de ordenado:', orderMovies);
+          
+        },
+        (error) => {
+          console.error('Error al ordenar películas:', error);
+          
+        }
+      );
+    } else {
+      this.orderedMovies = [];
     }
   }
 
