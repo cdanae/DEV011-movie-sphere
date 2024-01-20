@@ -1,0 +1,7 @@
+.order-container select {
+    font-family: 'Playfair Display', serif;
+    background-color: #FFC0CB;
+    border: none;
+    font-size: 1rem;
+    text-align: center;
+}
