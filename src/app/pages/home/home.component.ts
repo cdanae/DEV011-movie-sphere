@@ -9,54 +9,32 @@ import { TmdbService } from 'src/app/services/tmdb.service';
 })
 export class HomeComponent implements OnInit {
   movies: Movie[] = [];
-  @Input() filteredMovies: Movie[] = [];
-  @Input() orderedMovies: Movie[] = [];
+  procesedMovies: Movie[] = [];
+  selectedFilter: string = '';
+  selectedOrder: string = '';
 
   constructor(private tmdbService: TmdbService) { }
 
   ngOnInit(): void {
     this.tmdbService.getDiscoverMovies().subscribe(data => {
-      this.movies = data.results;
-      this.filteredMovies = this.movies;
-      this.orderedMovies = this.movies;
-
+      this.procesedMovies = data.results;
     })
+    //ngOnChanges, detectar cuando cambie mi valor de filtros, ejecutar la funcion applyfilter o probar con observab;e
+    //escuchar tambien paginacion
   }
 
-  applyFilter(selectedFilter: string): void {
-    if (selectedFilter) {
-      this.tmdbService.getFilterByGenre(selectedFilter).subscribe(
-        (filterMovies: any) => {
-          this.filteredMovies = filterMovies.results;
-          console.log('Resultados de filtrado:', filterMovies);
-          
-        },
-        (error) => {
-          console.error('Error al filtrar películas:', error);
-          
-        }
-      );
-    } else {
-      this.filteredMovies = [];
-    }
-  }
+  applyFilter(): void {
 
-  applyOrder(selectedOrder: string): void {
-    if (selectedOrder) {
-      this.tmdbService.getOrderBy(selectedOrder).subscribe(
-        (orderMovies: any) => {
-          this.orderedMovies = orderMovies.results;
-          console.log('Resultados de ordenado:', orderMovies);
-          
-        },
-        (error) => {
-          console.error('Error al ordenar películas:', error);
-          
-        }
-      );
-    } else {
-      this.orderedMovies = [];
-    }
-  }
+    this.tmdbService.getFilteredMovies(this.selectedFilter, this.selectedOrder).subscribe(
+      (filterMovies: any) => {
+        this.procesedMovies = filterMovies.results;
+        console.log('Resultados de filtrado:', this.procesedMovies);
 
+      },
+      (error) => {
+        console.error('Error al filtrar películas:', error);
+
+      }
+    );
+  }
 }

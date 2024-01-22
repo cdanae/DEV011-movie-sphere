@@ -8,17 +8,11 @@ import { Movie } from 'src/app/interfaces/movies';
   styleUrls: ['./cards-container.component.css']
 })
 export class CardsContainerComponent implements OnInit {
-  movies: Movie[] = [];
-  @Input() filteredMovies: Movie[] = [];
-  @Input() orderedMovies: Movie[] = [];
+  @Input() movies: Movie[] = [];
   public page!: number;
 
-  constructor(private tmdbService: TmdbService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.tmdbService.getDiscoverMovies().subscribe(data => {
-      this.movies = data.results;     
-    })
-    //como desuscribirse? antes de destruir el componente se debe desuscribir *buena practica* cuanod ya no hace falta ver esta data
   }
 }

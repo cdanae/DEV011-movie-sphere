@@ -1,3 +1,6 @@
+.filter-container {
+    margin-left: 20px;
+}
 .filter-container select {
     font-family: 'Playfair Display', serif;
     background-color: #FFC0CB;

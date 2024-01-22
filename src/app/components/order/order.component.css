@@ -1,3 +1,6 @@
+.order-container {
+    margin-left: 20px;
+}
 .order-container select {
     font-family: 'Playfair Display', serif;
     background-color: #FFC0CB;
