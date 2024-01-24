@@ -1,7 +1,7 @@
-.filter-container {
+.order-container {
     margin-left: 20px;
 }
-.filter-container select {
+.order-container select {
     font-family: 'Playfair Display', serif;
     background-color: #FFC0CB;
     border: none;

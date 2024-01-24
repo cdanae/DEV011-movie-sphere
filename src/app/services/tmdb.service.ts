@@ -17,9 +17,15 @@ export class TmdbService {
     const url = `${this.baseUrl}/discover/movie?api_key=${this.apiKey}`;
     return this.http.get<MovieResponse>(url);
   }
-
-  getFilterByGenre(genreId: string): Observable<GenreResponse> {
-    const url = `${this.baseUrl}/discover/movie?api_key=${this.apiKey}&with_genres=${genreId}`
+  getFilteredMovies(genreId?: string, orderValue?: string): Observable<GenreResponse> {
+    let url
+    if (genreId && orderValue) {
+      url = `${this.baseUrl}/discover/movie?api_key=${this.apiKey}&with_genres=${genreId}&sort_by=${orderValue}`
+    } else if (genreId === null) {
+      url = `${this.baseUrl}/discover/movie?api_key=${this.apiKey}&sort_by=${orderValue}`
+    } else {
+      url = `${this.baseUrl}/discover/movie?api_key=${this.apiKey}&with_genres=${genreId}`
+    }
     return this.http.get<GenreResponse>(url)
   }
 }

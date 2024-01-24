@@ -1,4 +1,5 @@
-<section class="filter-section">
-    <app-filter (selectedFilter)="applyFilter($event)"></app-filter>
+<section class="filter-section" (change)="applyFilter()">
+    <app-filter (selectedFilter)="selectedFilter = $event"></app-filter>
+    <app-order (selectedOrder)="selectedOrder = $event"></app-order>
 </section>
-<app-cards-container [filteredMovies]="filteredMovies"></app-cards-container>
+<app-cards-container [movies]="procesedMovies"></app-cards-container>

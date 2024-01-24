@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './components/footer/footer.component';
 import { CardsContainerComponent } from './components/cards-container/cards-container.component';
 import { FilterComponent } from './components/filter/filter.component';
+import { OrderComponent } from './components/order/order.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { FilterComponent } from './components/filter/filter.component';
     FooterComponent,
     CardsContainerComponent,
     FilterComponent,
+    OrderComponent,
   ],
   imports: [
     BrowserModule,
