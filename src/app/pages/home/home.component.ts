@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Movie } from 'src/app/interfaces/movies';
 import { TmdbService } from 'src/app/services/tmdb.service';
-import { movies } from './response';
+import  {movies}  from './response';
 
 @Component({
   selector: 'app-home',
@@ -9,12 +9,14 @@ import { movies } from './response';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  movies: Movie[] = [];
+  //movies: Movie[] = [];
+  movies: any[] = [];
+
   procesedMovies: Movie[] = [];
   selectedFilter: string = '';
   selectedOrder: string = '';
 
-  constructor(private tmdbService: TmdbService) { }
+  constructor() { }
 
   ngOnInit(): void {
 /*     this.tmdbService.getDiscoverMovies().subscribe(data => {
@@ -25,7 +27,7 @@ export class HomeComponent implements OnInit {
     //escuchar tambien paginacion
   }
 
-  applyFilter(): void {
+/*   applyFilter(): void {
 
     this.tmdbService.getFilteredMovies(this.selectedFilter, this.selectedOrder).subscribe(
       (filterMovies: any) => {
@@ -38,5 +40,5 @@ export class HomeComponent implements OnInit {
 
       }
     );
-  }
+  } */
 }

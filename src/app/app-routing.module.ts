@@ -16,15 +16,15 @@ const routes: Routes = [
     ]
   },
   {
+    path: 'details',
+    title: 'Details movie',
+    component: DetailsComponent
+  },
+  {
     path: '**', 
     title: 'Page Not Found', 
     component: NotFoundComponent
   },
-  {
-    path: '/details',
-    title: 'Details movie',
-    component: DetailsComponent
-  }
 ];
 
 @NgModule({
