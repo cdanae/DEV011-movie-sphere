@@ -16,6 +16,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CardsContainerComponent } from './components/cards-container/cards-container.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { OrderComponent } from './components/order/order.component';
+import { DetailsComponent } from './pages/details/details.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { OrderComponent } from './components/order/order.component';
     CardsContainerComponent,
     FilterComponent,
     OrderComponent,
+    DetailsComponent,
   ],
   imports: [
     BrowserModule,
