@@ -7,10 +7,10 @@ import { Movie } from 'src/app/interfaces/movies';
   styleUrls: ['./order.component.css']
 })
 export class OrderComponent implements OnInit {
-  selectedOptionOrder: string = '';
+  selectedOptionOrder: string = 'popularity.desc';
   orderMovies: Movie[] = [];
 
-    @Output() selectedOrder = new EventEmitter<string>();
+  @Output() selectedOrder = new EventEmitter<string>();
 
   constructor() { }
 
