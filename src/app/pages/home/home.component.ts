@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Movie } from 'src/app/interfaces/movies';
 import { TmdbService } from 'src/app/services/tmdb.service';
-
+/* import  {movies}  from './response';
+ */
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -9,6 +10,7 @@ import { TmdbService } from 'src/app/services/tmdb.service';
 })
 export class HomeComponent implements OnInit {
   movies: Movie[] = [];
+
   procesedMovies: Movie[] = [];
   selectedFilter: string = '';
   selectedOrder: string = '';
@@ -19,6 +21,7 @@ export class HomeComponent implements OnInit {
     this.tmdbService.getDiscoverMovies().subscribe(data => {
       this.procesedMovies = data.results;
     })
+   /*  this.movies = movies.results; */
     //ngOnChanges, detectar cuando cambie mi valor de filtros, ejecutar la funcion applyfilter o probar con observab;e
     //escuchar tambien paginacion
   }

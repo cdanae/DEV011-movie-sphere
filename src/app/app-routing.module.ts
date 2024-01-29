@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { CardComponent } from './components/card/card.component';
+import { DetailsComponent } from './pages/details/details.component';
 
 
 const routes: Routes = [
@@ -15,10 +16,15 @@ const routes: Routes = [
     ]
   },
   {
+    path: 'details/:id',
+    title: 'Details movie',
+    component: DetailsComponent
+  },
+  {
     path: '**', 
     title: 'Page Not Found', 
     component: NotFoundComponent
-  }
+  },
 ];
 
 @NgModule({

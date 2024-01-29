@@ -1,6 +1,9 @@
 <div class="grid-container">
     <ng-container *ngFor="let movie of movies | paginate: { itemsPerPage: 8, currentPage: page }">
-        <app-card [movie]="movie"></app-card>
+        <a [routerLink]="['/details', movie.id]">
+            <app-card [movie]="movie"></app-card>
+        </a>
+
     </ng-container>
 </div>
 
