@@ -1,0 +1,17 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+  font-family: 'Playfair Display', serif;
+  margin: 40px 45px 40px 45px;
+}
+
+.paginator::ng-deep .ngx-pagination {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+}
+
+.paginator::ng-deep .ngx-pagination .current {
+  background: #FFC0CB;
+  color: #02376E;
+}

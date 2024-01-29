@@ -1,0 +1,17 @@
+<div class="details-page">
+    <div class="details-container">
+        <button [routerLink]="'/'">🔙  Return</button>
+        <div class="details-info">
+            <img [src]="'https://image.tmdb.org/t/p/w500/' + detailsMovie.poster_path" alt="">
+            <section class="details-section">
+                <h1>{{ detailsMovie.title }}</h1>
+                <p>Realese date: {{ detailsMovie.release_date }}</p>
+                <p>Vote average: {{ detailsMovie.vote_average }}</p>
+                <p>Vote count: {{ detailsMovie.vote_count }}</p>
+                <p>Description:</p>
+                <p>{{ detailsMovie.overview }}</p>
+            </section>
+        </div>
+        
+    </div>
+</div>
